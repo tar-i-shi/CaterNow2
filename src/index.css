@@ -36,6 +36,7 @@ body {
   background: url('../homeimg.jpg') no-repeat center center/cover;
   color: white;
   padding: 5rem 1rem;
+  text-align: center;
 }
 
 .hero-content h1 {
@@ -59,6 +60,13 @@ body {
 .testimonials-section,
 .contact-section {
   padding: 2rem 1rem;
+}
+
+.services-section h2,
+.testimonials-section h2,
+.contact-section h2 {
+  color: #ff6347;
+  font-size: 2rem;
 }
 
 .services-grid,
@@ -96,8 +104,7 @@ body {
 .contact-form button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  background-color: #333;
-  color: white;
+  color: black;
   border: none;
   cursor: pointer;
 }
@@ -107,4 +114,5 @@ body {
   color: white;
   padding: 1rem;
   margin-top: 2rem;
+  text-align: center;
 }
