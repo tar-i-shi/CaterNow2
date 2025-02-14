@@ -1,14 +1,32 @@
 import React from "react";
-
-const CorporateEvents = () => {
+import "./Style/CorporateCatering.css";
+import weddingCaterers from "../data/CorporateCatering.json"; // Import the JSON file
+import CateringCard from "../components/CateringCard"; // Import the CateringCard component
+import "../index.css";
+const WeddingCatering = () => {
     return (
-        <>
-            <div>
-                <h1>Corporate Events</h1>
-                <p>We provide the best catering services for Corporate events.</p>
+        <div className="wedding-container">
+            {/* Hero Section with Background Image */}
+            <div className="hero-section">
+                <h1>Wedding Catering Services</h1>
+                <p>Make your wedding day unforgettable with our exquisite catering services.</p>
             </div>
-        </>
+
+            {/* Horizontal Caterers List */}
+            <div className="caterers-list">
+                {weddingCaterers.map((caterer) => (
+                    <CateringCard key={caterer.id} caterer={caterer} />
+                ))}
+            </div>
+
+            {/* Contact Section */}
+            <div className="contact-section-cater">
+                <h2>Book Our Services</h2>
+                <p>Contact us today to plan your dream wedding!</p>
+                <button className="contact-btn">Get a Quote</button>
+            </div>
+        </div>
     );
 };
 
-export default CorporateEvents;
+export default WeddingCatering;

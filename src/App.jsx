@@ -16,9 +16,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/wedding-catering" element={<WeddingCatering />} />
-        <Route path="/corporate-events" element={<CorporateEvents />} />
+        <Route path="/corporate-events" element={<CorporateCatering />} />
         <Route path="/private-parties" element={<PrivateParties />} />
-        <Route path="/birthday-parties" element={<BirthdayParties />} />
+        <Route path="/birthday-parties" element={<BirthdayCatering />} />
         <Route path="/home-catering" element={<HomeCatering />} />
         <Route path="/bbq-catering" element={<BBQCatering />} />
       </Routes>

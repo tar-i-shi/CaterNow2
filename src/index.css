@@ -33,7 +33,7 @@ body {
 }
 
 .hero-section {
-  background: url('../homeimg.jpg') no-repeat center center/cover;
+  background: url('../homeimg3.jpg') no-repeat center center/cover;
   color: white;
   padding: 5rem 1rem;
 }
@@ -59,6 +59,12 @@ body {
 .testimonials-section,
 .contact-section {
   padding: 2rem 1rem;
+}
+
+.services-section h2,
+.testimonials-section h2,
+.contact-section h2 {
+  color: #ff6347;
 }
 
 .services-grid,
