@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home.jsx";
+import Home from "./Pages/home.jsx";
 import Login from "./Pages/Login.jsx";
 import WeddingCatering from "./Pages/WeddingCatering.jsx";
-import CorporateEvents from "./Pages/CorporateEvents.jsx";
+import CorporateCatering from "./Pages/CorporateEvents.jsx";
 import PrivateParties from "./Pages/PrivateParties.jsx";
-import BirthdayParties from "./Pages/BirthdayParties.jsx";
+import BirthdayCatering from "./Pages/BirthdayParties.jsx";
 import HomeCatering from "./Pages/HomeCatering.jsx";
 import BBQCatering from "./Pages/BBQCatering.jsx";
 
