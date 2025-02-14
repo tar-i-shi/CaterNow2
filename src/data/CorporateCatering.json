@@ -21,7 +21,7 @@
         "rating": 4.7,
         "location": "Indore, Madhya Pradesh",
         "image": "img3.jpg",
-        "description": "Affordable and delicious wedding catering."
+        "description": "Affordable and delicious catering."
     },
     {
         "id": 4,
@@ -29,6 +29,6 @@
         "rating": 4.9,
         "location": "Indore, Madhya Pradesh",
         "image": "img4.jpg",
-        "description": "Affordable, Luxurious and delicious wedding catering."
+        "description": "Affordable, Luxurious and delicious catering."
     }
 ]

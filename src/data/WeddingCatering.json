@@ -20,7 +20,7 @@
         "name": "Sayaji Hotel Catering",
         "rating": 4.7,
         "location": "Indore, Madhya Pradesh",
-        "image": "img3.jpg",
+        "image": "../img3.jpg",
         "description": "Affordable and delicious wedding catering."
     },
     {
@@ -28,7 +28,7 @@
         "name": "Shereton Catering",
         "rating": 4.9,
         "location": "Indore, Madhya Pradesh",
-        "image": "img4.jpg",
+        "image": "../img4.jpg",
         "description": "Affordable, Luxurious and delicious wedding catering."
     }
 ]
