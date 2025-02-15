@@ -8,13 +8,13 @@ const Header = () => {
 
     return (
         <header className="header">
-            <div className="logo">CaterNow</div>
+            <div className="logo"><a href="/">CaterNow</a></div>
             <nav className="nav">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#testimonials">Testimonials</a></li>
+                    <li><a href="/#contact">Contact</a></li>
                     {user ? (
                         <>
                             <li><span className="user-greeting">Hi, {user}</span></li>

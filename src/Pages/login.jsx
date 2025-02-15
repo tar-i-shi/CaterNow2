@@ -1,33 +1,45 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../components/AuthContent";
+import React, { useState } from 'react';
+import './Style/Login.css';
+import { Link } from "react-router-dom";
 
 function Login() {
-    const [username, setUsername] = useState("");
-    const { login } = useAuth();
-    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const handleLogin = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        if (username.trim() !== "") {
-            login(username);
-            navigate("/");  // Redirect to Home page
-        }
+        console.log('Login submitted:', { email, password });
     };
 
     return (
         <div className="login-container">
-            <h2>Login</h2>
-            <form onSubmit={handleLogin}>
-                <input
-                    type="text"
-                    placeholder="Enter your name"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                />
-                <button type="submit">Login</button>
-            </form>
+            <div className="login-box">
+                <h2>Login</h2>
+                <form onSubmit={handleSubmit}>
+                    <div className="login-form-group">
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <p className="signup-link">
+                    Don't have an account? <Link to="/signup">Sign up</Link>
+                </p>
+            </div>
         </div>
     );
 }
