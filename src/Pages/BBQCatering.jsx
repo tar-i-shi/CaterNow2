@@ -1,11 +1,11 @@
 import React from "react";
-import "./Style/Catering.css";
-import BBQCaterers from "../data/BBQCatering.json"; // Import the JSON file
+import "./Style/BBQCatering.css";
+import weddingCaterers from "../data/BBQCatering.json"; // Import the JSON file
 import CateringCard from "../components/CateringCard"; // Import the CateringCard component
-
+import "../index.css";
 const BBQCatering = () => {
     return (
-        <div className="bbq-container">
+        <div className="wedding-container">
             {/* Hero Section with Background Image */}
             <div className="hero-section">
                 <h1>BBQ Catering Services</h1>
@@ -14,19 +14,21 @@ const BBQCatering = () => {
 
             {/* Horizontal Caterers List */}
             <div className="caterers-list">
-                {BBQCaterers.map((caterer) => (
+                {weddingCaterers.map((caterer) => (
                     <CateringCard key={caterer.id} caterer={caterer} />
                 ))}
             </div>
 
             {/* Contact Section */}
-            <div className="contact-section">
+            <div className="contact-section-cater">
                 <h2>Book Our Services</h2>
-                <p>Contact us today to plan your dream BBQ Outing!</p>
+                <p>Contact us today to plan your dream BBQ feast!</p>
                 <button className="contact-btn">Get a Quote</button>
             </div>
         </div>
     );
 };
+
+
 
 export default BBQCatering;

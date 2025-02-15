@@ -9,17 +9,19 @@
 }
 
 /* Contact Section */
-.contact-section {
+.contact-section-cater {
     padding: 40px 20px;
     text-align: center;
+    color: white;
+    background-color: #333;
 }
 
-.contact-section h2 {
+.contact-section-cater h2 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
 
-.contact-section p {
+.contact-section-cater p {
     font-size: 1.2rem;
     margin-bottom: 20px;
 }

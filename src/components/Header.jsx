@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from './AuthContent';
+import { useAuth } from '../components/AuthContent.jsx';
 
 const Header = () => {
     const navigate = useNavigate();

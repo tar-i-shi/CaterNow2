@@ -1,8 +1,8 @@
 import React from "react";
-import "./Style/Catering.css";
+import "./Style/WeddingCatering.css";
 import weddingCaterers from "../data/WeddingCatering.json"; // Import the JSON file
 import CateringCard from "../components/CateringCard"; // Import the CateringCard component
-
+import "../index.css";
 const WeddingCatering = () => {
     return (
         <div className="wedding-container">
@@ -20,7 +20,7 @@ const WeddingCatering = () => {
             </div>
 
             {/* Contact Section */}
-            <div className="contact-section">
+            <div className="contact-section-cater">
                 <h2>Book Our Services</h2>
                 <p>Contact us today to plan your dream wedding!</p>
                 <button className="contact-btn">Get a Quote</button>
