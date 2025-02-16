@@ -17,7 +17,7 @@ const Header = () => {
                     <li><a href="/#contact">Contact</a></li>
                     {user ? (
                         <>
-                            <li><span className="user-greeting">Hi!, {user.name}</span></li>
+                            <li><span className="user-greeting">Hi👋!, {user.name}</span></li>
                             <li><button className="logout-button" onClick={logout}>Logout</button></li>
                         </>
                     ) : (
