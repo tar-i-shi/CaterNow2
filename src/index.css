@@ -21,6 +21,15 @@ body {
   font-weight: bold;
 }
 
+.header .logout-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 .header .nav ul {
   list-style: none;
   display: flex;
@@ -36,6 +45,12 @@ body {
 .header .nav ul li a {
   color: white;
   text-decoration: none;
+}
+
+.user-greeting {
+  color: #f4f4f4;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .hero-section {
@@ -129,4 +144,11 @@ body {
   padding: 1rem;
   margin-top: 0rem;
   text-align: center;
+}
+
+.success-message {
+  color: #ff6347;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2rem;
 }

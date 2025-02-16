@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './Style/Signup.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Signup() {
+    const navigate = new useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -18,7 +19,29 @@ function Signup() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        localStorage.setItem("user", JSON.stringify(formData));
+        // Check if password and confirmPassword match
+        if (formData.password !== formData.confirmPassword) {
+            alert("Password and Confirm Password feilds do not match!");
+            return;
+        }
+        const pattern = /^[6-9]\d{9}$/;
+        if (!pattern.test(formData.contact)) {
+            alert("Invalid Contact no.");
+            return;
+        }
+        navigate("/login");
         console.log('Signup submitted:', formData);
+
+        // Clear form after submission
+        setFormData({
+            name: '',
+            email: '',
+            password: '',
+            confirmPassword: '',
+            contact: '',
+            address: ''
+        });
     };
 
     return (
@@ -67,7 +90,7 @@ function Signup() {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Contact No</label>
+                        <label>Contact No (+91)</label>
                         <input
                             type="text"
                             name="contact"

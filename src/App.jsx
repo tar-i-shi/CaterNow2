@@ -12,7 +12,7 @@ import BBQCatering from "./Pages/BBQCatering.jsx";
 import PlaceOrder from "./Pages/PlaceOrder.jsx";
 import Header from "./components/Header.jsx";  // Global Header
 import Footer from "./components/Footer.jsx";  // Global Footer
-import AuthProvider from "./components/AuthContent.jsx";  // Import AuthProvider
+import { AuthProvider } from "./Pages/AuthContext";  // Import AuthProvider
 
 function App() {
   return (

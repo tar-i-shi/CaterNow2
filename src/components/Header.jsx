@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from './AuthContent';
+import { useAuth } from '../Pages/AuthContext';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -17,7 +17,7 @@ const Header = () => {
                     <li><a href="/#contact">Contact</a></li>
                     {user ? (
                         <>
-                            <li><span className="user-greeting">Hi, {user}</span></li>
+                            <li><span className="user-greeting">Hi!, {user.name}</span></li>
                             <li><button className="logout-button" onClick={logout}>Logout</button></li>
                         </>
                     ) : (

@@ -1,14 +1,32 @@
-import React, { useState } from 'react';
-import './Style/Login.css';
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import "./Style/Login.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "./AuthContext";
 
 function Login() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+    const { login } = useAuth();
+
+    // Single state object for email & password
+    const [formData, setFormData] = useState({ email: "", password: "" });
+
+    // Handle input changes dynamically
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Login submitted:', { email, password });
+
+        // Retrieve stored user from localStorage
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+
+        if (storedUser && storedUser.email === formData.email && storedUser.password === formData.password) {
+            login(storedUser);  // Log in user
+            navigate("/");  // Redirect to home
+        } else {
+            alert("Invalid email or password");
+        }
     };
 
     return (
@@ -20,8 +38,9 @@ function Login() {
                         <label>Email</label>
                         <input
                             type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
                             required
                         />
                     </div>
@@ -29,8 +48,9 @@ function Login() {
                         <label>Password</label>
                         <input
                             type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
                             required
                         />
                     </div>
