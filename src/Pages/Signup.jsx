@@ -25,8 +25,12 @@ function Signup() {
             alert("Password and Confirm Password feilds do not match!");
             return;
         }
-        const pattern = /^[6-9]\d{9}$/;
-        if (!pattern.test(formData.contact)) {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com)$/;
+        if (!emailPattern.test(formData.email)) {
+            alert("Invalid email Id");
+        }
+        const phonePattern = /^[6-9]\d{9}$/;
+        if (!phonePattern.test(formData.contact)) {
             alert("Invalid Contact no.");
             return;
         }
@@ -43,7 +47,21 @@ function Signup() {
             address: ''
         });
     };
+    const handleBlur = (e) => {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com)$/;
+        if (!emailPattern.test(formData.email)) {
+            setError((prev) => ({ ...prev, email: "Only Gmail and Hotmail emails are allowed!" }));
+        } else {
+            setError((prev) => ({ ...prev, email: '' }));
+        }
 
+        const phonePattern = /^[6-9]\d{9}$/;
+        if (!phonePattern.test(formData.contact)) {
+            setError((prev) => ({ ...prev, contact: "Invalid contact number!" }));
+        } else {
+            setError((prev) => ({ ...prev, contact: '' }));
+        }
+    };
     return (
         <div className="signup-container">
             <div className="signup-box">
@@ -66,6 +84,7 @@ function Signup() {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
+                            onBlur={handleBlur}
                             required
                         />
                     </div>
@@ -96,6 +115,7 @@ function Signup() {
                             name="contact"
                             value={formData.contact}
                             onChange={handleChange}
+                            onBlur={handleBlur}
                             required
                         />
                     </div>

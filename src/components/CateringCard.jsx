@@ -1,8 +1,8 @@
 import React from "react";
-import "./CateringCard.css"; // Optional: Add specific styles for the card
+import "./CateringCard.css";
 import { useNavigate } from "react-router-dom";
 const CateringCard = ({ caterer }) => {
-    const { name, rating, location, image, description } = caterer;
+    const { id, name, rating, location, image, description } = caterer;
     const navigate = useNavigate();
     return (
         <div className="caterer-card">
@@ -11,10 +11,9 @@ const CateringCard = ({ caterer }) => {
             <p className="rating">⭐️ {rating}</p>
             <p className="location">{location}</p>
 
-            {/* Hover Overlay */}
             <div className="card-overlay">
                 <p className="description">{description}</p>
-                <button className="book-now-btn" onClick={() => navigate("/PlaceOrder")}>Book Now</button>
+                <button className="book-now-btn" onClick={() => navigate(`/catering/${id}`)}>Book Now</button>
             </div>
         </div>
     );

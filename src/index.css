@@ -100,16 +100,17 @@ body {
 
 .service-card,
 .testimonial-card {
-  background-color: #f4f4f4;
+  background-color: linen;
   padding: 1rem;
   border-radius: 8px;
   width: 30%;
+  border-color: #ff6347;
 }
 
 .service-card:hover {
   background-color: #ff6347;
   color: white;
-  border: #ff6347;
+  border-color: #ff6347;
   cursor: pointer;
 }
 

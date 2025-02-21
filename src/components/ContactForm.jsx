@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -15,17 +16,19 @@ const ContactForm = () => {
         });
     };
 
-    const handleSubmit = (e) => {
-        console.log(formData);
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setIsSubmitted(true);
 
-        // Clear all fields
-        setFormData({
-            name: '',
-            email: '',
-            message: ''
-        });
+        try {
+            setFormData({
+                name: '',
+                email: '',
+                message: ''
+            });
+        } catch (error) {
+            console.error('Error submitting contact form:', error);
+            alert('There was an error submitting your message.');
+        }
     };
 
     return (
