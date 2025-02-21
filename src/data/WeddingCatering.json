@@ -9,17 +9,17 @@
         "packages": [
             {
                 "name": "Basic Package",
-                "price": "₹1999",
+                "price": "₹999",
                 "details": "Includes 3 dishes + drinks."
             },
             {
                 "name": "Standard Package",
-                "price": "₹2999",
+                "price": "₹1999",
                 "details": "Includes 5 dishes + drinks + dessert."
             },
             {
                 "name": "Premium Package",
-                "price": "₹4999",
+                "price": "₹3999",
                 "details": "Includes 8 dishes + drinks + dessert + live counter."
             }
         ],
@@ -39,17 +39,17 @@
         "packages": [
             {
                 "name": "Basic Package",
-                "price": "₹1999",
+                "price": "₹999",
                 "details": "Includes 3 dishes + drinks."
             },
             {
                 "name": "Standard Package",
-                "price": "₹2999",
+                "price": "₹1999",
                 "details": "Includes 5 dishes + drinks + dessert."
             },
             {
                 "name": "Premium Package",
-                "price": "₹4999",
+                "price": "₹3999",
                 "details": "Includes 8 dishes + drinks + dessert + live counter."
             }
         ],
@@ -64,22 +64,22 @@
         "name": "Sayaji Hotel Catering",
         "rating": 4.7,
         "location": "Indore, Madhya Pradesh",
-        "image": "img3.jpg",
+        "image": "../img3.jpg",
         "description": "Affordable and delicious catering.",
         "packages": [
             {
                 "name": "Basic Package",
-                "price": "₹1999",
+                "price": "₹999",
                 "details": "Includes 3 dishes + drinks."
             },
             {
                 "name": "Standard Package",
-                "price": "₹2999",
+                "price": "₹1999",
                 "details": "Includes 5 dishes + drinks + dessert."
             },
             {
                 "name": "Premium Package",
-                "price": "₹4999",
+                "price": "₹3999",
                 "details": "Includes 8 dishes + drinks + dessert + live counter."
             }
         ],
@@ -94,22 +94,22 @@
         "name": "Sheraton Catering",
         "rating": 4.9,
         "location": "Indore, Madhya Pradesh",
-        "image": "img4.jpg",
+        "image": "../img4.jpg",
         "description": "Affordable, Luxurious and delicious catering.",
         "packages": [
             {
                 "name": "Basic Package",
-                "price": "₹1999",
+                "price": "₹999",
                 "details": "Includes 3 dishes + drinks."
             },
             {
                 "name": "Standard Package",
-                "price": "₹2999",
+                "price": "₹1999",
                 "details": "Includes 5 dishes + drinks + dessert."
             },
             {
                 "name": "Premium Package",
-                "price": "₹4999",
+                "price": "₹3999",
                 "details": "Includes 8 dishes + drinks + dessert + live counter."
             }
         ],

@@ -13,13 +13,15 @@ import BBQCatering from "./Pages/BBQCatering.jsx";
 import PlaceOrder from "./Pages/PlaceOrder.jsx";
 import Header from "./components/Header.jsx";  // Global Header
 import Footer from "./components/Footer.jsx";  // Global Footer
-import { AuthProvider } from "./Pages/AuthContext";  // Auth Provider
+import { AuthProvider } from "./components/AuthContext";  // Auth Provider
 import BBQCateringPackages from "./Pages/BBQCateringPackages.jsx";
 import WeddingCateringPackages from "./Pages/WeddingCateringPackages";
 import CorporateCateringPackages from "./Pages/CorporateCateringPackages";
 import HomeCateringPackages from "./Pages/HomeCateringPackages";
 import PrivateCateringPackages from "./Pages/PrivateCateringPackages";
 import BirthdayCateringPackages from "./Pages/BirthdayCateringPackages";
+import PackageCustomization from "./components/PackageCustomization.jsx";
+import BillingInformation from "./components/BillingInformation";
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
           <Route path="/home-catering/:id" element={<HomeCateringPackages />} />
           <Route path="/private-catering/:id" element={<PrivateCateringPackages />} />
           <Route path="/birthday-catering/:id" element={<BirthdayCateringPackages />} />
+          <Route path="/customize" element={<PackageCustomization />} />
+          <Route path="/billing-information" element={<BillingInformation />} />
         </Routes>
         <Footer />
       </Router>

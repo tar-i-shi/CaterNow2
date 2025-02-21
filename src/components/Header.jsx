@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../Pages/AuthContext';
+import { useAuth } from './AuthContext';
 
 const Header = () => {
     const navigate = useNavigate();

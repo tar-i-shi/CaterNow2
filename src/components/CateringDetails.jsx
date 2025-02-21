@@ -37,11 +37,9 @@ const CateringDetails = ({ caterer }) => {
                             <button
                                 className="book-now-btn"
                                 onClick={() =>
-                                    navigate(
-                                        `/placeorder?caterer=${encodeURIComponent(
-                                            caterer.name
-                                        )}&package=${encodeURIComponent(pkg.name)}`
-                                    )
+                                    navigate("/customize", {
+                                        state: { caterer, pkg },
+                                    })
                                 }
                             >
                                 Book Now
