@@ -3,7 +3,7 @@ import './Style/Signup.css';
 import { Link, useNavigate } from "react-router-dom";
 
 function Signup() {
-    const navigate = new useNavigate();
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -13,28 +13,53 @@ function Signup() {
         address: ''
     });
 
+    const [errors, setErrors] = useState({});
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const handleBlur = (e) => {
+        const { name, value } = e.target;
+
+        let errorMsg = "";
+
+        if (name === "email") {
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com)$/;
+            if (!emailPattern.test(value)) {
+                errorMsg = "Only Gmail and Hotmail emails are allowed!";
+            }
+        }
+
+        if (name === "contact") {
+            const phonePattern = /^[6-9]\d{9}$/;
+            if (!phonePattern.test(value)) {
+                errorMsg = "Invalid contact number!";
+            }
+        }
+
+        if (name === "confirmPassword") {
+            if (value !== formData.password) {
+                errorMsg = "Password and Confirm Password fields do not match!";
+            }
+        }
+
+        setErrors((prevErrors) => ({ ...prevErrors, [name]: errorMsg }));
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // Ensure no errors exist before proceeding
+        if (Object.values(errors).some((error) => error) ||
+            Object.values(formData).some((field) => field === "")) {
+            alert("Please fix all errors before submitting.");
+            return;
+        }
+
         localStorage.setItem("user", JSON.stringify(formData));
-        // Check if password and confirmPassword match
-        if (formData.password !== formData.confirmPassword) {
-            alert("Password and Confirm Password feilds do not match!");
-            return;
-        }
-        const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com)$/;
-        if (!emailPattern.test(formData.email)) {
-            alert("Invalid email Id");
-        }
-        const phonePattern = /^[6-9]\d{9}$/;
-        if (!phonePattern.test(formData.contact)) {
-            alert("Invalid Contact no.");
-            return;
-        }
         navigate("/login");
+
         console.log('Signup submitted:', formData);
 
         // Clear form after submission
@@ -46,89 +71,28 @@ function Signup() {
             contact: '',
             address: ''
         });
+        setErrors({});
     };
-    const handleBlur = (e) => {
-        const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com)$/;
-        if (!emailPattern.test(formData.email)) {
-            setError((prev) => ({ ...prev, email: "Only Gmail and Hotmail emails are allowed!" }));
-        } else {
-            setError((prev) => ({ ...prev, email: '' }));
-        }
 
-        const phonePattern = /^[6-9]\d{9}$/;
-        if (!phonePattern.test(formData.contact)) {
-            setError((prev) => ({ ...prev, contact: "Invalid contact number!" }));
-        } else {
-            setError((prev) => ({ ...prev, contact: '' }));
-        }
-    };
     return (
         <div className="signup-container">
             <div className="signup-box">
                 <h2>Sign Up</h2>
                 <form onSubmit={handleSubmit}>
-                    <div className="signup-form-group">
-                        <label>Name</label>
-                        <input
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Email</label>
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            value={formData.password}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Confirm Password</label>
-                        <input
-                            type="password"
-                            name="confirmPassword"
-                            value={formData.confirmPassword}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Contact No (+91)</label>
-                        <input
-                            type="text"
-                            name="contact"
-                            value={formData.contact}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Address</label>
-                        <input
-                            type="text"
-                            name="address"
-                            value={formData.address}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
+                    {Object.keys(formData).map((key) => (
+                        <div className="form-group" key={key}>
+                            <label>{key.charAt(0).toUpperCase() + key.slice(1)}</label>
+                            <input
+                                type={key.includes("password") ? "password" : "text"}
+                                name={key}
+                                value={formData[key]}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                required
+                            />
+                            {errors[key] && <p className="error-msg">{errors[key]}</p>}
+                        </div>
+                    ))}
                     <button type="submit">Sign Up</button>
                 </form>
                 <p className="signup-link">
